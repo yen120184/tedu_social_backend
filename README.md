@@ -9,6 +9,8 @@
 
 ## Command remembers
 
+### Lession 9
+
 - Open terminal command windows: Ctrl + `
 - npm init or yarn init
 - git init
@@ -20,3 +22,8 @@
 - git remote add origin https://github.com/yen120184/tedu_social_backend.git
 - git remote show origin
 - git push -u origin main
+
+### Lession 10
+
+- tsc --init
+- Reference: https://www.typescriptlang.org/tsconfig
