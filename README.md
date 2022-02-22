@@ -27,3 +27,9 @@
 
 - tsc --init
 - Reference: https://www.typescriptlang.org/tsconfig
+
+### Lession 11
+
+- yarn add express
+- yarn add typescript nodemon ts-node --dev
+- yarn server
