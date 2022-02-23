@@ -38,3 +38,10 @@
 
 - yarn add mongoose
 - yarn add @types/mongoose --dev
+
+### Lession 14
+
+Cai dat quan ly bien moi truong
+
+- yarn add dotenv
+- yarn add cross-env

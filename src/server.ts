@@ -11,7 +11,7 @@
 // app.listen(port, () =>{
 //     console.log(`Server is listening on port ${port}`);
 // })
-
+import 'dotenv/config';
 import App from "./app";
 import { IndexRoute } from "./modules/index";
 
