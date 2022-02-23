@@ -33,3 +33,8 @@
 - yarn add express
 - yarn add typescript nodemon ts-node --dev
 - yarn server
+
+### Lession 13
+
+- yarn add mongoose
+- yarn add @types/mongoose --dev
