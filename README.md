@@ -26,7 +26,6 @@
 ### Lession 10
 
 - tsc --init
-- Reference: https://www.typescriptlang.org/tsconfig
 
 ### Lession 11
 
@@ -45,3 +44,15 @@ Cai dat quan ly bien moi truong
 
 - yarn add dotenv
 - yarn add cross-env
+
+### Lession 15 Cai dat cac middleware
+
+- yarn add hpp helmet morgan cors
+- yarn add @types/hpp @types/morgan @types/cors --dev
+- yarn add winston
+
+### Reference
+
+- https://www.typescriptlang.org/tsconfig
+- http://expressjs.com/en/resources/middleware/morgan.html
+- https://www.npmjs.com/package/morgan
