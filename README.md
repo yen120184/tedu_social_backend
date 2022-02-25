@@ -51,6 +51,10 @@ Cai dat quan ly bien moi truong
 - yarn add @types/hpp @types/morgan @types/cors --dev
 - yarn add winston
 
+### Lession 16 validate cac bien moi truong
+
+- yarn add envalid
+
 ### Reference
 
 - https://www.typescriptlang.org/tsconfig
