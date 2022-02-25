@@ -55,6 +55,10 @@ Cai dat quan ly bien moi truong
 
 - yarn add envalid
 
+### Lession 17 Khai bao module de tro vao dg dan file dung @
+
+- yarn add --dev tsconfig-paths
+
 ### Reference
 
 - https://www.typescriptlang.org/tsconfig
