@@ -6,6 +6,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import helmet from 'helmet';
 import { Logger } from '@core/utils';
+import { errorMiddleware } from '@core/middleware';
 class App{
     public app: express.Application;
     public port: string | number;
@@ -43,6 +44,7 @@ class App{
             this.app.use(morgan('dev'));
             this.app.use(cors({origin: true, credentials: true}))
         }
+        this.app.use(errorMiddleware);
     }
 
     private connectToDatabase(){
