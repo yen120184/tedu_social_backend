@@ -59,9 +59,19 @@ Cai dat quan ly bien moi truong
 
 - yarn add --dev tsconfig-paths
 
+### Lession 22
+
+- yarn add gravatar
+- yarn add @types/gravatar --dev
+- yarn add bcryptjs
+- yarn add @types/bcryptjs --dev
+- yarn add jsonwebtoken
+- yarn add --dev @types/jsonwebtoken
+
 ### Reference
 
 - https://www.typescriptlang.org/tsconfig
 - http://expressjs.com/en/resources/middleware/morgan.html
 - https://www.npmjs.com/package/morgan
 - https://github.com/winstonjs/winston
+- https://www.npmjs.com/package/bcryptjs
