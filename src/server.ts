@@ -11,15 +11,16 @@
 // app.listen(port, () =>{
 //     console.log(`Server is listening on port ${port}`);
 // })
-import { validateEnv } from '@core/utils';
-import 'dotenv/config';
+import { validateEnv } from "@core/utils";
+import "dotenv/config";
 import App from "./app";
 import { IndexRoute } from "@modules/index";
+import UsersRoute from "@modules/users/users.route";
 
 validateEnv();
 
-const routes=[new IndexRoute()];
+const routes = [new IndexRoute(), new UsersRoute()];
 
-const app=new App(routes);
+const app = new App(routes);
 
 app.listen();

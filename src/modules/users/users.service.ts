@@ -30,21 +30,21 @@ class UserService {
 
     const hashedPassword = await bcryptjs.hash(model.password!, salt);
     const createUser: IUser = await this.userSchema.create({
-        ...model,
-        password: hashedPassword,
-        avatar: avatar,
-        date: Date.now(),
+      ...model,
+      password: hashedPassword,
+      avatar: avatar,
+      date: Date.now(),
     });
     return this.createToken(createUser);
   }
 
-  private createToken(user: IUser): TokenData{
-      const dataStoredInToken: DataStoredInToken = {id: user._id};
-      const secret: string = process.env.JWT_TOKEN_SECRET!;
-      const expiresIn: number = 3600;
-      return{
-          token: jwt.sign(dataStoredInToken,secret,{expiresIn: expiresIn});
-      }
+  private createToken(user: IUser): TokenData {
+    const dataStoredInToken: DataStoredInToken = { id: user._id };
+    const secret: string = process.env.JWT_TOKEN_SECRET!;
+    const expiresIn: number = 60;
+    return {
+      token: jwt.sign(dataStoredInToken, secret, { expiresIn: expiresIn }),
+    };
   }
 }
 export default UserService;
