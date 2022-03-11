@@ -68,6 +68,11 @@ Cai dat quan ly bien moi truong
 - yarn add jsonwebtoken
 - yarn add --dev @types/jsonwebtoken
 
+### Lession 24
+
+- yarn add class-validator
+- yarn add class-transformer
+
 ### Reference
 
 - https://www.typescriptlang.org/tsconfig
@@ -75,3 +80,4 @@ Cai dat quan ly bien moi truong
 - https://www.npmjs.com/package/morgan
 - https://github.com/winstonjs/winston
 - https://www.npmjs.com/package/bcryptjs
+- https://www.npmjs.com/package/class-validator
