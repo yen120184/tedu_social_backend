@@ -16,10 +16,11 @@ import "dotenv/config";
 import App from "./app";
 import { IndexRoute } from "@modules/index";
 import UsersRoute from "@modules/users/users.route";
+import AuthRoute from "@modules/auth/auth.route";
 
 validateEnv();
 
-const routes = [new IndexRoute(), new UsersRoute()];
+const routes = [new IndexRoute(), new UsersRoute(), new AuthRoute()];
 
 const app = new App(routes);
 
