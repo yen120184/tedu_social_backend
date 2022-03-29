@@ -8,6 +8,7 @@ import bcryptjs from "bcryptjs";
 import IUser from "./users.interface";
 import jwt from "jsonwebtoken";
 import { IPagination } from "@core/interfaces";
+import { ExceptionHandler } from "winston";
 class UserService {
   public userSchema = UserSchema;
 
@@ -51,12 +52,16 @@ class UserService {
     let avatar = user.avatar;
     if (user.email === model.email) {
       throw new HttpException(400, "You must using the difference email");
-    } else {
-      avatar = gravatar.url(model.email!, {
-        size: "200",
-        rating: "g",
-        default: "mm",
-      });
+    }
+
+    const checkEmailExit = await this.userSchema
+      .find({
+        $and: [{ email: { $eq: model.email } }, { _id: { $ne: userId } }],
+      })
+      .exec();
+
+    if (checkEmailExit.length !== 0) {
+      throw new HttpException(400, "Your email has been used by another user");
     }
 
     let updateUserById;
@@ -64,18 +69,26 @@ class UserService {
       const salt = await bcryptjs.genSalt(10);
       const hashedPassword = await bcryptjs.hash(model.password, salt);
       updateUserById = await this.userSchema
-        .findByIdAndUpdate(userId, {
-          ...model,
-          avatar: avatar,
-          password: hashedPassword,
-        })
+        .findByIdAndUpdate(
+          userId,
+          {
+            ...model,
+            avatar: avatar,
+            password: hashedPassword,
+          },
+          { new: true }
+        )
         .exec();
     } else {
       updateUserById = await this.userSchema
-        .findByIdAndUpdate(userId, {
-          ...model,
-          avatar: avatar,
-        })
+        .findByIdAndUpdate(
+          userId,
+          {
+            ...model,
+            avatar: avatar,
+          },
+          { new: true }
+        )
         .exec();
     }
 
