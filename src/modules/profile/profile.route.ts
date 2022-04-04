@@ -6,6 +6,7 @@ import { Profiler } from "winston";
 import { Route } from "@core/interfaces";
 import { Router } from "express";
 import AddExperienceDto from "./dtos/add_exprience.dto";
+import AddEducationDto from "./dtos/add_education.dto";
 
 class ProfileRoute implements Route {
   public path = "/api/v1/profile";
@@ -54,6 +55,19 @@ class ProfileRoute implements Route {
       `${this.path}/experience/:exp_id`,
       authMiddleware,
       this.profileController.deleteExperience
+    );
+
+    this.router.put(
+      `${this.path}/education`,
+      authMiddleware,
+      validationMiddleware(AddEducationDto),
+      this.profileController.createEducation
+    );
+
+    this.router.delete(
+      `${this.path}/education/:edu_id`,
+      authMiddleware,
+      this.profileController.deleteEducation
     );
   }
 }
