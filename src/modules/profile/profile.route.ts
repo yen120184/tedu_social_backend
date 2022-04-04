@@ -5,6 +5,7 @@ import ProfileController from "./profile.controller";
 import { Profiler } from "winston";
 import { Route } from "@core/interfaces";
 import { Router } from "express";
+import AddExperienceDto from "./dtos/add_exprience.dto";
 
 class ProfileRoute implements Route {
   public path = "/api/v1/profile";
@@ -17,25 +18,42 @@ class ProfileRoute implements Route {
 
   private initializeRoutes() {
     this.router.get(`${this.path}`, this.profileController.getAllProfiles);
+
     this.router.get(
       `${this.path}/user/:id`,
       this.profileController.getByUserId
     );
+
     this.router.get(
       `${this.path}/me`,
       authMiddleware,
       this.profileController.getCurrentProfile
     );
+
     this.router.post(
       `${this.path}`,
       authMiddleware,
       validationMiddleware(CreateProfileDto),
       this.profileController.createProfile
     );
+
     this.router.delete(
       `${this.path}/:id`,
       authMiddleware,
       this.profileController.deleteProfile
+    );
+
+    this.router.put(
+      `${this.path}/experience`,
+      authMiddleware,
+      validationMiddleware(AddExperienceDto),
+      this.profileController.createExperience
+    );
+
+    this.router.delete(
+      `${this.path}/experience/:exp_id`,
+      authMiddleware,
+      this.profileController.deleteExperience
     );
   }
 }
