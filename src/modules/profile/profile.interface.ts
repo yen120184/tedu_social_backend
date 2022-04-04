@@ -9,7 +9,7 @@ export interface IProfile {
   bio: string;
   experience: IExperience[];
   education: IEducation[];
-  social: ISocial[];
+  social: ISocial;
   date: Date;
 }
 
@@ -23,19 +23,17 @@ export interface IExperience {
   current: boolean;
   description: string;
 }
-
 export interface IEducation {
   _id: string;
   school: string;
   degree: string;
-  field_of_study: string;
+  fieldofstudy: string;
   from: Date;
   to: Date;
   current: boolean;
   description: string;
 }
-
-export interface ISocial {
+export interface ISocial extends Record<string, string> {
   youtube: string;
   twitter: string;
   linkedin: string;

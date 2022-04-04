@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+import mongoose, { Document } from "mongoose";
+
 import { IProfile } from "./profile.interface";
 
 const ProfileSchema = new mongoose.Schema({
@@ -17,11 +18,11 @@ const ProfileSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    require: true,
+    required: true,
   },
   skills: {
     type: [String],
-    require: true,
+    required: true,
   },
   bio: {
     type: String,
@@ -65,7 +66,7 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      field_of_study: {
+      fieldofstudy: {
         type: String,
         required: true,
       },
@@ -85,28 +86,23 @@ const ProfileSchema = new mongoose.Schema({
       },
     },
   ],
-  social: [
-    {
-      youtube: {
-        type: String,
-        required: true,
-      },
-      twitter: {
-        type: String,
-        required: true,
-      },
-      linkedin: {
-        type: String,
-        required: true,
-      },
-      facebook: {
-        type: String,
-      },
-      instagram: {
-        type: String,
-      },
+  social: {
+    youtube: {
+      type: String,
     },
-  ],
+    twitter: {
+      type: String,
+    },
+    facebook: {
+      type: String,
+    },
+    linkedin: {
+      type: String,
+    },
+    instagram: {
+      type: String,
+    },
+  },
   date: {
     type: Date,
     default: Date.now,

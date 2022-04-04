@@ -73,6 +73,10 @@ Cai dat quan ly bien moi truong
 - yarn add class-validator
 - yarn add class-transformer
 
+### Lession 31 Tao API Profile
+
+- yarn add normalize-url
+
 ### Reference
 
 - https://www.typescriptlang.org/tsconfig
