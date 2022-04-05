@@ -51,6 +51,7 @@ export default class UsersController {
       next(error);
     }
   };
+
   public getAllPaging = async (
     req: Request,
     res: Response,

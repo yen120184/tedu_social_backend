@@ -8,7 +8,6 @@ import bcryptjs from "bcryptjs";
 import IUser from "./users.interface";
 import jwt from "jsonwebtoken";
 import { IPagination } from "@core/interfaces";
-import { ExceptionHandler } from "winston";
 class UserService {
   public userSchema = UserSchema;
 

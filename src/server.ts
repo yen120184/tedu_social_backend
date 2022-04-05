@@ -18,6 +18,7 @@ import { IndexRoute } from "@modules/index";
 import UsersRoute from "@modules/users/users.route";
 import AuthRoute from "@modules/auth/auth.route";
 import ProfileRoute from "@modules/profile/profile.route";
+import PostsRoute from "@modules/posts/posts.route";
 
 validateEnv();
 
@@ -26,6 +27,7 @@ const routes = [
   new UsersRoute(),
   new AuthRoute(),
   new ProfileRoute(),
+  new PostsRoute(),
 ];
 
 const app = new App(routes);
