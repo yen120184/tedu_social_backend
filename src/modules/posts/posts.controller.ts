@@ -164,4 +164,39 @@ export default class PostsController {
       next(error);
     }
   };
+
+  public sharePost = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const postId = req.params.id;
+
+      const shares = await this.postService.sharePost(req.user.id, postId);
+
+      res.status(200).json(shares);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public removeSharePost = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const postId = req.params.id;
+
+      const shares = await this.postService.removeSharePost(
+        req.user.id,
+        postId
+      );
+
+      res.status(200).json(shares);
+    } catch (error) {
+      next(error);
+    }
+  };
 }
