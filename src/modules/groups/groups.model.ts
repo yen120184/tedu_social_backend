@@ -16,7 +16,7 @@ const GroupSchema = new mongoose.Schema({
   members: [
     {
       user: { type: mongoose.Schema.Types.ObjectId },
-      join_date: {
+      date: {
         type: Date,
         default: Date.now,
       },
@@ -25,7 +25,7 @@ const GroupSchema = new mongoose.Schema({
   member_requests: [
     {
       user: { type: mongoose.Schema.Types.ObjectId },
-      join_date: {
+      date: {
         type: Date,
         default: Date.now,
       },
