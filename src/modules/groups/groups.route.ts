@@ -46,6 +46,17 @@ export default class GroupsRoute implements Route {
       this.groupsController.approveJoinGroup
     );
 
+    this.router.get(
+      this.path + "/members/:id",
+      this.groupsController.getAllMembers
+    );
+
+    this.router.delete(
+      this.path + "/members/:user_id/:group_id",
+      authMiddleware,
+      this.groupsController.removeMember
+    );
+
     this.router.post(
       this.path + "/managers/:id",
       authMiddleware,
@@ -57,11 +68,6 @@ export default class GroupsRoute implements Route {
       this.path + "/managers/:group_id/:user_id",
       authMiddleware,
       this.groupsController.removeManager
-    );
-
-    this.router.get(
-      this.path + "/members/:id",
-      this.groupsController.getAllMembers
     );
   }
 }
