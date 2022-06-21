@@ -98,3 +98,9 @@ Cai dat quan ly bien moi truong
 - yarn add --dev @shopify/eslint-plugin
 - yarn add prettier --dev
 - yarn add husky -D
+### Built ứng dụng bằng webpack
+- yarn add -D webpack webpack-cli
+- yarn add -D webpack-node-externals
+- yarn add -D webpack-shell-plugin
+- yarn add --dev tsconfig-paths-webpack-plugin
+- yarn add ts-loader --dev
