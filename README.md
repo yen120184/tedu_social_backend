@@ -93,3 +93,8 @@ Cai dat quan ly bien moi truong
 - yarn add yamljs
 - yarn add -D @types/swagger-ui-express
 - yarn add -D @types/yamljs
+### ESLINT
+- yarn add eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
+- yarn add --dev @shopify/eslint-plugin
+- yarn add prettier --dev
+- yarn add husky -D
