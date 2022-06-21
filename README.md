@@ -85,3 +85,11 @@ Cai dat quan ly bien moi truong
 - https://github.com/winstonjs/winston
 - https://www.npmjs.com/package/bcryptjs
 - https://www.npmjs.com/package/class-validator
+
+### Lession 52 Swagger cho API
+
+- https://www.npmjs.com/package/swagger-ui-express
+- yarn add swagger-ui-express
+- yarn add yamljs
+- yarn add -D @types/swagger-ui-express
+- yarn add -D @types/yamljs

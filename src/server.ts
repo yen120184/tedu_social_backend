@@ -20,6 +20,7 @@ import AuthRoute from "@modules/auth/auth.route";
 import ProfileRoute from "@modules/profile/profile.route";
 import PostsRoute from "@modules/posts/posts.route";
 import GroupsRoute from "@modules/groups/groups.route";
+import ConversationsRoute from "@modules/conversations/conversations.route";
 
 validateEnv();
 
@@ -30,6 +31,7 @@ const routes = [
   new ProfileRoute(),
   new PostsRoute(),
   new GroupsRoute(),
+  new ConversationsRoute(),
 ];
 
 const app = new App(routes);

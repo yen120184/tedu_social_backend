@@ -7,6 +7,8 @@ import cors from "cors";
 import helmet from "helmet";
 import { Logger } from "@core/utils";
 import { errorMiddleware } from "@core/middleware";
+import swaggerUi from "swagger-ui-express";
+import YAML from "yamljs";
 class App {
   public app: express.Application;
   public port: string | number;
@@ -21,6 +23,7 @@ class App {
     this.initializeMiddleware();
     this.initializeRoutes(routes);
     this.initializeErrorMiddleware();
+    this.initializeSwagger();
   }
 
   public listen() {
@@ -76,6 +79,12 @@ class App {
       Logger.error(reason);
     });
     Logger.info("Database connected...");
+  }
+
+  private initializeSwagger() {
+    const swaggerDocument = YAML.load("./src/swagger.yaml");
+
+    this.app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   }
 }
 
